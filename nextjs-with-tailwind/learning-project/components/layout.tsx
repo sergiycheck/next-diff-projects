@@ -12,7 +12,7 @@ function LayoutPartial({ children }: { children: React.ReactNode }) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="container grow mx-auto">{children}</main>
+      <main className="container grow mx-auto pt-4">{children}</main>
 
       <footer className="container flex-none mx-auto">
         <a href="#">some footer link</a>

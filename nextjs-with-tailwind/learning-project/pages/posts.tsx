@@ -21,9 +21,14 @@ export default function Resource({
 }) {
   return (
     <Layout>
-      <ul>
+      <ul className="flex flex-col gap-4">
         {resourceArr.map((resource) => (
-          <li key={resource.id}>{resource.name}</li>
+          <li
+            className="rounded-md border-2 border-zinc-300 p-2  hover:cursor-pointer"
+            key={resource.id}
+          >
+            {resource.name}
+          </li>
         ))}
       </ul>
     </Layout>
