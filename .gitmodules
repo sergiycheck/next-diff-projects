@@ -1,0 +1,3 @@
+[submodule "nextjs-with-tailwind/learning-project"]
+	path = nextjs-with-tailwind/learning-project
+	url = https://github.com/sergiycheck/next-js-tailwind-learning.git
