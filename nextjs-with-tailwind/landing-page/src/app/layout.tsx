@@ -16,7 +16,9 @@ export default function RootLayout({
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
-      <body className={`${inter.variable} font-sans max-[770px]:text-xs`}>
+      <body
+        className={`${inter.variable} font-sans max-[770px]:text-xs relative`}
+      >
         <RootHeader />
         {children}
       </body>

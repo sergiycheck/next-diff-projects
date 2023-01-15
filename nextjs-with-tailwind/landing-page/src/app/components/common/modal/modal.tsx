@@ -25,7 +25,9 @@ export default function Modal({
       <div className="bg-white w-full min-h-[300px] p-2 z-10">
         {showHeader && (
           <div className="flex justify-end text-base">
-            <CloseIconClient onClose={onClose} />
+            <div onClick={onClose}>
+              <CloseIconClient />
+            </div>
           </div>
         )}
 
