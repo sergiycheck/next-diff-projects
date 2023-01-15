@@ -2,7 +2,7 @@ import { HomePage } from './components/home/HomePage';
 
 export default function Home() {
   return (
-    <main className={`min-h-screen mt-20 sm:mt-28`}>
+    <main className={`min-h-screen bg-white`}>
       <HomePage />
     </main>
   );
