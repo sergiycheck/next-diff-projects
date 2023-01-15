@@ -1,7 +1,9 @@
+import { HomePage } from './components/home/HomePage';
+
 export default function Home() {
   return (
-    <main className={`min-h-screen`}>
-      <div className="text-3xl font-bold underline">content will be here</div>
+    <main className={`min-h-screen mt-20 sm:mt-28`}>
+      <HomePage />
     </main>
   );
 }

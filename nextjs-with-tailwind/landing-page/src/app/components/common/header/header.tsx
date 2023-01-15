@@ -1,5 +1,6 @@
 'use client';
 import React from 'react';
+import { SharedBlackButton } from '../button/sharedBlackBtn';
 import { CloseIconClient } from '../modal/CloseIcon';
 import MenuIconFromServer from './MenuIcon';
 
@@ -7,16 +8,16 @@ export default function RootHeader() {
   const [showModal, setShowModal] = React.useState(false);
   return (
     <>
-      <div className="container mx-auto flex justify-between items-centerp-4">
+      <div className="fixed left-1/2 top-0 translate-x-[-50%] container flex justify-between items-center p-4  z-10 bg-white">
         <div className="w-fit">
-          <div className="text-center p-4 sm:p-2">
+          <div className="text-center sm:p-2 text-xl">
             Miguelanger
             <br />
             Herrera
           </div>
         </div>
 
-        <div className="sm:hidden flex flex-col justify-center items-center p-4">
+        <div className="sm:hidden flex flex-col justify-center items-center">
           <div onClick={() => setShowModal((prev) => !prev)}>
             {!showModal ? <MenuIconFromServer /> : <CloseIconClient />}
           </div>
@@ -25,15 +26,14 @@ export default function RootHeader() {
         <div className="hidden sm:flex gap-5 items-center">
           <HeaderItems />
         </div>
-
-        {showModal && (
-          <div className="absolute flex justify-center items-top bottom-0 w-full min-h-screen bg-white">
-            <div className="flex flex-col gap-5 items-center">
-              <HeaderItems />
-            </div>
-          </div>
-        )}
       </div>
+      {showModal && (
+        <div className="absolute flex justify-center items-top w-full min-h-full bg-white">
+          <div className="flex flex-col gap-5 items-center">
+            <HeaderItems />
+          </div>
+        </div>
+      )}
     </>
   );
 }
@@ -41,13 +41,11 @@ export default function RootHeader() {
 export const HeaderItems = () => {
   return (
     <>
-      <div className="p-2">Home</div>
-      <div className="p-2">About</div>
-      <div className="p-2">Services</div>
-      <div className="p-2">Contact Us</div>
-      <div className="p-2 bg-zinc-900 text-white rounded-lg">
-        Book Appointment
-      </div>
+      <div className="p-3">Home</div>
+      <div className="p-3">About</div>
+      <div className="p-3">Services</div>
+      <div className="p-3">Contact Us</div>
+      <SharedBlackButton text={'Book Appointment'} />
     </>
   );
 };
