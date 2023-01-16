@@ -8,12 +8,16 @@ export default function RootHeader() {
   const [showModal, setShowModal] = React.useState(false);
   return (
     <>
-      <div className="fixed left-1/2 top-0 translate-x-[-50%] container flex justify-between items-center p-4  z-20 bg-zinc-100 ">
-        <div className="w-fit">
-          <div className="text-center sm:p-2 text-xl">
-            Miguelanger
-            <br />
-            Herrera
+      <div className="fixed left-1/2 top-0 translate-x-[-50%] w-full md:container md:mx-auto flex justify-between items-center p-4  z-20 bg-zinc-100 ">
+        <div className="basis-2/6 relative">
+          <div className="sm:bg-white sm:absolute  sm:h-[200px] sm:w-[200px] mdh-[250px] md:w-[250px]  sm:bottom-[-60px] sm:left-[-20px] rounded-full flex flex-col justify-end">
+            <div className="text-center sm:p-2 ">
+              <h4 className="text-2xl font-bold pb-5">
+                Miguelanger
+                <br />
+                Herrera
+              </h4>
+            </div>
           </div>
         </div>
 
@@ -23,7 +27,7 @@ export default function RootHeader() {
           </div>
         </div>
 
-        <div className="hidden sm:flex gap-5 items-center">
+        <div className="hidden basis-4/6 sm:flex gap-5 justify-end">
           <HeaderItems />
         </div>
       </div>

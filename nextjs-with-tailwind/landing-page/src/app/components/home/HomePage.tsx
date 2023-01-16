@@ -8,14 +8,14 @@ export const HomePage = () => {
   return (
     <>
       <div className="w-full bg-zinc-100 ">
-        <div className="container mx-auto px-4 pt-20 sm:pt-28">
+        <div className="lg:container lg:mx-auto mx-auto px-4 pt-20 sm:pt-28">
           <SectionFirst />
         </div>
       </div>
 
       <div className="bg-white">
-        <div className="container mx-auto px-4">
-          <div className="text-2xl font-bold">
+        <div className="lg:container lg:mx-auto mx-auto px-4">
+          <div className="text-3xl font-bold">
             The professional Consultation <br />
             Platform For Your Real Estate and Finance
           </div>
@@ -28,7 +28,7 @@ export const HomePage = () => {
 export const SectionFirst = () => {
   return (
     <div className="flex flex-col sm:flex-row ">
-      <div className="sm:basis-2/6 flex flex-col gap-4">
+      <div className="sm:basis-2/6 flex flex-col gap-4 mt-24 sm:mt-36">
         <div className="text-5xl font-bold">
           A power that shines your business
         </div>
@@ -37,11 +37,11 @@ export const SectionFirst = () => {
           sint at ipsam tenetur voluptate quis aspernatur doloribus voluptatum
           debitis, ad esse possimus quam nostrum in minima sed impedit! Placeat.
         </p>
-        <SharedBlackButton text={'Discover Demo'} />
+        <SharedBlackButton className="w-[200px]" text={'Discover Demo'} />
       </div>
       <div className="mt-2 sm:mt-0 sm:basis-4/6 flex justify-center relative">
         <Image
-          className="w-[300px] sm:w-[400px] h-auto"
+          className="w-[300px] h-auto sm:w-[400px] sm:h-[512.625px]"
           src={SuccessfullGuyImage}
           alt={'picture of author'}
         />
@@ -56,7 +56,7 @@ export const SectionFirst = () => {
           <div className="flex justify-between">
             <div className="basis-1/3">
               <Image
-                className="h-[80px] w-[80px] sm:h-[120px] sm:w-[120px] rounded-2xl ml-3 sm:ml-9 shadow-2xl"
+                className="h-[80px] w-[80px] sm:h-[100px] sm:w-[100px] rounded-2xl ml-3 sm:ml-9 shadow-2xl"
                 src={FiftyPercentInvestment}
                 alt="50 percent investment"
               />
@@ -64,7 +64,7 @@ export const SectionFirst = () => {
 
             <div className="basis-1/3 relative">
               <Image
-                className="h-[80px] w-[80px] sm:h-[120px] sm:w-[120px] rounded-2xl ml-3 sm:ml-9 absolute bottom-9 shadow-2xl"
+                className="h-[80px] w-[80px] sm:h-[100px] sm:w-[100px] rounded-2xl ml-3 sm:ml-9 absolute bottom-9 shadow-2xl"
                 src={FiftyPercentInvestment}
                 alt="50 percent investment"
               />
