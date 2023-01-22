@@ -1,6 +1,7 @@
 'use client';
 import React from 'react';
 import { SharedBlackButton } from '../button/sharedBlackBtn';
+import { H4Heading } from '../headings/headings';
 import { CloseIconClient } from '../modal/CloseIcon';
 import MenuIconFromServer from './MenuIcon';
 
@@ -8,15 +9,26 @@ export default function RootHeader() {
   const [showModal, setShowModal] = React.useState(false);
   return (
     <>
-      <div className="fixed left-1/2 top-0 translate-x-[-50%] w-full md:container md:mx-auto flex justify-between items-center p-4 pb-0 z-20 bg-zinc-100 ">
+      <div
+        className="
+        fixed left-1/2 top-0 translate-x-[-50%] w-full lg:container 
+        md:mx-auto flex justify-between items-center p-4 pb-0 z-20 bg-zinc-100 "
+      >
         <div className="basis-2/6 relative">
-          <div className="sm:bg-white sm:absolute  sm:h-[200px] sm:w-[200px] mdh-[250px] md:w-[250px]  sm:bottom-[-60px] sm:left-[-20px] rounded-full flex flex-col justify-end">
+          <div
+            className="
+            sm:bg-white sm:absolute  sm:h-[300px] sm:w-[300px] 
+            sm:bottom-[-60px] sm:left-[-40px] 
+            rounded-full flex flex-col justify-end isolate"
+          >
             <div className="text-center sm:p-2 ">
-              <h4 className="text-2xl font-bold pb-5">
-                Miguelanger
-                <br />
-                Herrera
-              </h4>
+              <H4Heading className="sm:pb-5">
+                <>
+                  Miguelanger
+                  <br />
+                  Herrera
+                </>
+              </H4Heading>
             </div>
           </div>
         </div>
