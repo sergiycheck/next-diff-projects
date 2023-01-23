@@ -3,6 +3,7 @@ import React from 'react';
 import { SharedBlackButton } from '../button/sharedBlackBtn';
 import { H4Heading } from '../headings/headings';
 import { CloseIconClient } from '../modal/CloseIcon';
+import { Text } from '../textsContainers/textContainers';
 import MenuIconFromServer from './MenuIcon';
 
 export default function RootHeader() {
@@ -22,12 +23,11 @@ export default function RootHeader() {
             rounded-full flex flex-col justify-end isolate"
           >
             <div className="text-center sm:p-2 ">
+              <H4Heading>
+                <Text>Miguelanger</Text>
+              </H4Heading>
               <H4Heading className="sm:pb-5">
-                <>
-                  Miguelanger
-                  <br />
-                  Herrera
-                </>
+                <Text>Herrera</Text>
               </H4Heading>
             </div>
           </div>
@@ -57,10 +57,18 @@ export default function RootHeader() {
 export const HeaderItems = () => {
   return (
     <>
-      <div className="p-3">Home</div>
-      <div className="p-3">About</div>
-      <div className="p-3">Services</div>
-      <div className="p-3">Contact Us</div>
+      <div className="p-3">
+        <Text>Home</Text>
+      </div>
+      <div className="p-3">
+        <Text>About</Text>
+      </div>
+      <div className="p-3">
+        <Text>Services</Text>
+      </div>
+      <div className="p-3">
+        <Text>Contact Us</Text>
+      </div>
       <SharedBlackButton text={'Book Appointment'} />
     </>
   );
