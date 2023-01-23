@@ -18,10 +18,22 @@ import { PEl, Text } from '../common/textsContainers/textContainers';
 export const HomePage = () => {
   return (
     <>
-      <div className="w-full bg-zinc-100 ">
+      <div className="w-full bg-zinc-100 relative">
         <div className="lg:container lg:mx-auto mx-auto px-4 pt-20 sm:pt-32">
           <SectionFirst />
         </div>
+
+        <div
+          className="
+          absolute lg:bg-black
+          right-[-30px] top-[150px] half_circle_left"
+        ></div>
+
+        <div
+          className="
+          absolute lg:bg-black
+          left-[-50px] top-[550px] half_circle_right"
+        ></div>
       </div>
 
       <div className="bg-white">
@@ -213,7 +225,11 @@ export const BlackBgMarkLegend = ({
 }) => {
   return (
     <PEl
-      className={`bg-black dark:bg-white text-white dark:text-black rounded-[7px]  p-[5px] text-[8px]  sm:text-[10px] font-bold  ${otherClasses} `}
+      className={`
+        bg-black dark:bg-white text-white dark:text-black rounded-[7px]  
+        p-[5px] text-[8px]  sm:text-[10px] font-bold  ${
+          otherClasses ? otherClasses : ''
+        } `}
     >
       <Text>{text}</Text>
     </PEl>

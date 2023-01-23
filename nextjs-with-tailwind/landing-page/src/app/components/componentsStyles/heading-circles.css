@@ -1,0 +1,14 @@
+@define-mixin half_of_circle $degrees {
+  height: 60px;
+  width: 120px;
+  border-radius: 60px 60px 0 0;
+  transform: rotate($degrees);
+}
+
+.half_circle_left {
+  @mixin half_of_circle -90deg;
+}
+
+.half_circle_right {
+  @mixin half_of_circle 90deg;
+}
