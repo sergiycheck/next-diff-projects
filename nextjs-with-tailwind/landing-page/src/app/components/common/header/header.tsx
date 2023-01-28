@@ -8,12 +8,22 @@ import MenuIconFromServer from './MenuIcon';
 
 export default function RootHeader() {
   const [showModal, setShowModal] = React.useState(false);
+
+  React.useEffect(() => {
+    if (showModal) document.body.style.overflow = 'hidden';
+
+    return () => {
+      document.body.style.overflow = 'unset';
+    };
+  }, [showModal]);
+
   return (
     <>
       <div
         className="
-        fixed left-1/2 top-0 translate-x-[-50%] w-full lg:container 
-        md:mx-auto flex justify-between items-center p-4 pb-0 z-20 bg-zinc-100 "
+        p-4 fixed left-1/2 top-0 translate-x-[-50%] w-full lg:container 
+        md:mx-auto flex justify-between items-center 
+        pb-0 z-20 bg-zinc-100 "
       >
         <div className="basis-2/6 relative">
           <div
@@ -44,7 +54,10 @@ export default function RootHeader() {
         </div>
       </div>
       {showModal && (
-        <div className="absolute flex justify-center items-top w-full min-h-full bg-zinc-100 pt-24 sm:pt-28 z-10">
+        <div
+          className="absolute flex justify-center items-top w-full min-h-full 
+          bg-zinc-100 pt-24 sm:pt-28 z-10"
+        >
           <div className="flex flex-col gap-5 items-center">
             <HeaderItems />
           </div>

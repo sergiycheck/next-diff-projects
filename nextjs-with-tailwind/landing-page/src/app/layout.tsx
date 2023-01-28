@@ -10,14 +10,14 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
+    <html lang="en" className="min-h-screen">
       {/*
         <head /> will contain the components returned by the nearest parent
         head.tsx. Find out more at https://beta.nextjs.org/docs/api-reference/file-conventions/head
       */}
       <head />
       <body
-        className={`${inter.variable} font-sans max-[770px]:text-xs relative`}
+        className={`${inter.variable} font-sans max-[770px]:text-xs relative min-h-screen`}
       >
         <RootHeader />
         {children}
