@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  min-height: 100%;
+  background-color: var(--light-bg);
+}
+
+.content {
+  padding: 20px;
+  background-color: var(--light-bg);
+
+  background-color: rgba(var(--callout-rgb), 0.5);
+  border: 1px solid rgba(var(--callout-border-rgb), 0.3);
+  border-radius: var(--border-radius);
+}
+
+.header {
+  display: flex;
+  font-size: 1rem;
+  line-height: 1.5rem;
+  justify-content: flex-end;
+}
+
+.close_icon {
+  cursor: pointer;
+}

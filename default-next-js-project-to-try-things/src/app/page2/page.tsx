@@ -1,9 +1,9 @@
-import { Text } from "../shared";
+import { Page2Component } from "./page-2-component";
 
 export default function Page2() {
   return (
-    <div>
-      <Text>Page 2</Text>
-    </div>
+    <>
+      <Page2Component />
+    </>
   );
 }
