@@ -80,21 +80,11 @@ const useAnimationStylesWithDelay = ({
   };
 };
 
-export default function Modal({
-  show,
-  showHeader,
+const useContainerRefWithClickOusideEvent = ({
   onClose,
-  children,
-  delay = 500,
 }: {
-  show: boolean;
-  showHeader: boolean;
   onClose: () => void;
-  children: JSX.Element;
-  delay?: number;
-}) {
-  const { isBrowser } = useInBrowser();
-
+}) => {
   const containerRef = React.useRef(null);
 
   React.useEffect(() => {
@@ -111,7 +101,29 @@ export default function Modal({
     };
   }, [onClose]);
 
+  return {
+    containerRef,
+  };
+};
+
+export default function Modal({
+  show,
+  showHeader,
+  onClose,
+  children,
+  delay = 500,
+}: {
+  show: boolean;
+  showHeader: boolean;
+  onClose: () => void;
+  children: JSX.Element;
+  delay?: number;
+}) {
+  const { isBrowser } = useInBrowser();
+
   const shouldRenderChild = useDelayUnmount(show, delay);
+
+  const { containerRef } = useContainerRefWithClickOusideEvent({ onClose });
 
   const { mountedStyle, unmountedStyle } = useAnimationStylesWithDelay({
     show,
