@@ -15,6 +15,8 @@ export default function Modal({
   onClose: () => void;
   children: JSX.Element;
 }) {
+  const containerRef = React.useRef(null);
+
   const [isBrowser, setIsBrowser] = React.useState(false);
 
   React.useEffect(() => {
@@ -33,8 +35,22 @@ export default function Modal({
     };
   }, [show]);
 
+  React.useEffect(() => {
+    const bodyClickHandler = (e: MouseEvent) => {
+      if (containerRef.current == e.target) {
+        onClose();
+      }
+    };
+
+    document.addEventListener("click", bodyClickHandler);
+
+    return () => {
+      document.removeEventListener("click", bodyClickHandler);
+    };
+  }, [onClose]);
+
   const modalContent = show ? (
-    <div className={s.container}>
+    <div className={s.container} ref={containerRef}>
       <div className={s.content}>
         {showHeader && (
           <div className={s.header}>
