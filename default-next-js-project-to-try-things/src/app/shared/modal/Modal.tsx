@@ -66,11 +66,11 @@ const useAnimationStylesWithDelay = ({
   }, [show, delay]);
 
   const mountedStyle = {
-    transition: `opacity ${delay}ms ease-out`,
+    transition: `opacity ${delay}ms ease-in`,
     opacity: opacity,
   };
   const unmountedStyle = {
-    transition: `opacity ${delay}ms ease-in`,
+    transition: `opacity ${delay}ms ease-out`,
     opacity: opacity,
   };
 
