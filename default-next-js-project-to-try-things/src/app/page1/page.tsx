@@ -9,15 +9,26 @@ export default function Page1() {
 
   return (
     <div className={s.container}>
-      <Text>Page 1</Text>
+      <div className={s.header}>
+        <Text>Page 1</Text>
+      </div>
 
-      <button
-        onClick={() => {
-          setShow(true);
-        }}
-      >
-        Open modal
-      </button>
+      <div className={s.buttonsCont}>
+        <button
+          onClick={() => {
+            setShow(true);
+          }}
+        >
+          Open modal
+        </button>
+        <button
+          onClick={() => {
+            setShow(false);
+          }}
+        >
+          Hide modal
+        </button>
+      </div>
 
       <Modal
         show={show}

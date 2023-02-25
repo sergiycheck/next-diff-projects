@@ -27,20 +27,22 @@ export default function RootLayout({
       <head />
 
       <body className={inter.className}>
-        <header className={s.header}>
-          <Text>
-            <Link href="/">Home</Link>
-          </Text>
+        <main className={s.main}>
+          <header className={s.header}>
+            <Text>
+              <Link href="/">Home</Link>
+            </Text>
 
-          <Text>
-            <Link href="/page2">Page 2</Link>
-          </Text>
+            <Text>
+              <Link href="/page2">Page 2</Link>
+            </Text>
 
-          <Text>
-            <Link href="/page1">Page 1</Link>
-          </Text>
-        </header>
-        {children}
+            <Text>
+              <Link href="/page1">Page 1</Link>
+            </Text>
+          </header>
+          {children}
+        </main>
       </body>
     </html>
   );
