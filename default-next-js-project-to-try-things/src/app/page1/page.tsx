@@ -1,11 +1,13 @@
 "use client";
 
 import React from "react";
-import { Text, Modal } from "../shared";
+import { Text, Modal, ModalWithoutUnmount } from "../shared";
 import s from "./style.module.css";
 
 export default function Page1() {
   const [show, setShow] = React.useState(false);
+
+  const [showWithoutAnimation, setShowWithoutAnimation] = React.useState(false);
 
   return (
     <div className={s.container}>
@@ -16,17 +18,18 @@ export default function Page1() {
       <div className={s.buttonsCont}>
         <button
           onClick={() => {
-            setShow(true);
+            setShow((prev) => !prev);
           }}
         >
-          Open modal
+          Toggle modal with animation
         </button>
+
         <button
           onClick={() => {
-            setShow(false);
+            setShowWithoutAnimation((prev) => !prev);
           }}
         >
-          Hide modal
+          Toggle modal without animation
         </button>
       </div>
 
@@ -42,6 +45,19 @@ export default function Page1() {
           <Counter />
         </>
       </Modal>
+
+      <ModalWithoutUnmount
+        show={showWithoutAnimation}
+        showHeader={true}
+        onClose={() => {
+          setShowWithoutAnimation((prev) => !prev);
+        }}
+      >
+        <>
+          <Text>Modal content</Text>
+          <Counter />
+        </>
+      </ModalWithoutUnmount>
     </div>
   );
 }
