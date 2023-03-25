@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  client_app:
+    build:
+      context: .
+      dockerfile: Dockerfile.dev
+    ports:
+      - 3000:3000
+    volumes:
+      - $PWD:/home/node/client_app
+    restart: always
+    environment:
+     - SECRET_COOKIE_PASSWORD=2gyZ3GDw3LHZQKDhPmPDL3sjREVRXPr8
+    command: sh -c './entrypoint.dev.sh'
