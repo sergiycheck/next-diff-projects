@@ -8,7 +8,7 @@ services:
     ports:
       - 3000:3000
     volumes:
-      - $PWD/src:/src
+      - $PWD:/home/node/client_app
     restart: always
     environment:
       NEXTAUTH_URL: http://127.0.0.1:3000
